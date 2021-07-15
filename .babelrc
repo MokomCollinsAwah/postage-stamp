@@ -1,0 +1,13 @@
+{
+  "presets": ["@babel/preset-env"],
+  "ignore": [
+    "package.json",
+    "package-lock.json",
+    ".env",
+    "node_modules"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-optional-chaining"
+  ]
+}
