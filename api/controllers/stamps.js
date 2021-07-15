@@ -21,7 +21,7 @@ const postageStampController = {
 
   async fetchAllStamps(req, res, next) {
     try {
-      const stamps = await Stamp.find({});
+      const stamps = await Stamp.find({}).populate({ path: 'purchase' });
 
       return res.status(200).send(stamps);
     } catch (error) {

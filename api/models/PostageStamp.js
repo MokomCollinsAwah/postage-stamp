@@ -16,6 +16,10 @@ const stampSchema = new Schema(
     description: {
       type: String,
     },
+    purchase: {
+      type: Schema.Types.ObjectId,
+      ref: 'Purchase'
+    }
   },
   { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
