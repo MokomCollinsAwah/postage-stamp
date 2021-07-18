@@ -10,6 +10,10 @@ const stampSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    quantity: {
+      type: Number,
+      default: 1,
+    },
     stamp_name: {
       type: String,
     },

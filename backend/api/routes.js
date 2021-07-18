@@ -8,6 +8,7 @@ const routes = (app) => {
   app.get('/postage-stamps/available', postageStampController.fetchAvailableStamps)
   app.get('/postage-stamps/purchased', postageStampController.fetchPurchasedStamps)
   app.patch('/postage-stamps/:stampId', postageStampController.updateStamp)
+  app.post('/postage-stamps/optimal-selection', postageStampController.fetchStampsToBePurchased)
 
   // Purchase endpoints
   app.post("/postage-stamps/purchases", purchaseController.createPurchase);
