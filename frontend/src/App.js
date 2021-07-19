@@ -135,9 +135,11 @@ function App() {
                 </div>
               </div>
             ))}
-          <button className="btn btn-secondary" onClick={handlePurchase}>
-            Purchase stamps
-          </button>
+          {Boolean(state.optimalSelection.length) && (
+            <button className="btn btn-secondary" onClick={handlePurchase}>
+              Purchase stamps
+            </button>
+          )}
         </div>
       </div>
     </div>

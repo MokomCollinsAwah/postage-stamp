@@ -22,13 +22,20 @@ const postageStampController = {
 
   async fetchStampsToBePurchased(req, res, next) {
     const { postageAmount } = req.body;
-    console.log(req.body);
-    
+
     try {
-      const postageStamps = await Stamp.find({ quantity: 0 });
+      const postageStamps = await Stamp.find();
+      const sortedPostageStamps = postageStamps.sort((a, b) =>
+        a.amount < b.amount ? -1 : 1
+      );
 
       let result = [];
       let factoredStamps = [];
+
+      if (!postageAmount) {
+        return res.status(200).send([]);
+      }
+
       for (const stamp of postageStamps) {
         // If the postage amt equals the amount of one of the stamps, return one of the stamps
         if (postageAmount === stamp._doc.amount) {
@@ -50,7 +57,27 @@ const postageStampController = {
         result = [factoredQuantities[0]];
       }
 
-      // console.log(factoredStamps);
+      // const maxAmounStamp = sortedPostageStamps[sortedPostageStamps.length - 1];
+
+      // let i = 0,
+      //   k = 1,
+      //   j = 0;
+      // while (i < postageAmount) {
+      //   result.splice(i, 0, maxAmounStamp);
+      //   i++;
+      // }
+
+      // while (k <= postageAmount) {
+      //   while (j < sortedPostageStamps.length) {
+      //     if (sortedPostageStamps[j].amount >= sortedPostageStamps[k].amount) {
+      //       result.splice(k, 0, result[k]);
+      //     }
+      //     j++;
+      //   }
+      //   k++;
+      // }
+      // console.log(result);
+
       return res.status(200).send(result);
     } catch (error) {
       return next(next);
@@ -59,7 +86,7 @@ const postageStampController = {
 
   async fetchAllStamps(req, res, next) {
     try {
-      const stamps = await Stamp.find({}).populate({ path: 'purchase' });
+      const stamps = await Stamp.find({}).populate({ path: "purchase" });
 
       return res.status(200).send(stamps);
     } catch (error) {
@@ -97,7 +124,7 @@ const postageStampController = {
     } catch (error) {
       return next(error);
     }
-  }
+  },
 };
 
 export default postageStampController;
