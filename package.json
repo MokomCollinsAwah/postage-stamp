@@ -1,0 +1,26 @@
+{
+  "name": "postage-stamp-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "backend": "npm run start --prefix backend",
+    "frontend": "npm run start --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MokomCollinsAwah/postage-stamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MokomCollinsAwah/postage-stamp/issues"
+  },
+  "homepage": "https://github.com/MokomCollinsAwah/postage-stamp#readme"
+}
