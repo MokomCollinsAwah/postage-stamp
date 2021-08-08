@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "seed": "babel-node api/seeders/PostageStamps",
-    "start": "npm run seed && nodemon --exec babel-node api/server.js",
+    "seed": "./node_modules/.bin/babel-node api/seeders/PostageStamps",
+    "start": "npm run seed && nodemon --exec ./node_modules/.bin/babel-node api/server.js",
     "prod": "NODE_ENV=production node build/server.js",
     "clean": "rimraf ./build && mkdir build",
     "prebuild": "yarn clean",

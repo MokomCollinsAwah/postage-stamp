@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #181C36 !important;
+  color: #8f9bb3 !important;
+}
+
+.card {
+  background: transparent !important;
+  border: 1px solid #2e3a59;
+}
+
+.border-custom {
+  border: 1px solid #2e3a59 !important;
+}
+
+input {
+  background: transparent !important;
+  border: 1px solid #2e3a59 !important;
+  color: white !important;
+  appearance: none;
+}
+
+.toast {
+  background: green !important;
+}

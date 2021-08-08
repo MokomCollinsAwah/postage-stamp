@@ -1,27 +1,20 @@
 import Purchase from "../models/Purchase";
-import Stamp from "../models/PostageStamp";
 
 const purchaseController = {
   async createPurchase(req, res, next) {
     const { postage_amount, postage_stamps } = req.body;
 
     try {
-      const purchaseInstance = new Purchase({
-        postage_amount,
-      });
-      if (postage_stamps?.length) {
-        postage_stamps.forEach(async (stamp) => {
-          purchaseInstance.postage_stamps.push(stamp);
-          await Stamp.findOneAndUpdate(
-            { _id: stamp._id },
-            {
-              $inc: { quantity: -1 },
-            }
-          );
-        });
-      }
-      const purchase = await purchaseInstance.save();
-      return res.status(201).send(purchase);
+      // const purchaseInstance = new Purchase({
+      //   postage_amount,
+      // });
+      // if (postage_stamps?.length) {
+      //   postage_stamps.forEach(async (stamp) => {
+      //     purchaseInstance.postage_stamps.push(stamp);
+      //   });
+      // }
+      // const purchase = await purchaseInstance.save();
+      return res.status(201).send({});
     } catch (error) {
       return next(error);
     }

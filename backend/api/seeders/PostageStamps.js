@@ -23,7 +23,7 @@ var data = [
     model: "Postage_stamp",
     documents: [
       {
-        amount: 600,
+        amount: 100,
         isPurchased: false,
         quantity: 1,
         stamp_name: "My first stamp",
@@ -34,7 +34,7 @@ var data = [
       {
         amount: 500,
         isPurchased: false,
-        quantity: 2,
+        quantity: 1,
         stamp_name: "My second stamp",
         description: "Description of My second stamp",
         created_at: "2021-07-18T09:37:58.601Z",
@@ -43,7 +43,7 @@ var data = [
       {
         amount: 300,
         isPurchased: false,
-        quantity: 3,
+        quantity: 1,
         stamp_name: "My third stamp",
         description: "Description of My third stamp",
         created_at: "2021-07-18T09:38:34.784Z",
@@ -52,7 +52,7 @@ var data = [
       {
         amount: 50,
         isPurchased: false,
-        quantity: 4,
+        quantity: 1,
         stamp_name: "My fourth stamp",
         description: "Description of My fourth stamp",
         created_at: "2021-07-18T09:47:42.683Z",
